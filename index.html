@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refresh, Reviewed — Ranking 331,437 Pages for Human Attention</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#EEEFE9;
+    --bg-band:#E5E7DD;
+    --ink:#1C1F1A;
+    --ink-soft:#4A4E45;
+    --rule:#C9CBBE;
+    --signal:#A8632B;
+    --signal-soft:#EADACB;
+    --caution:#8B3A3A;
+    --caution-soft:#EBD9D6;
+    --structure:#3E5C63;
+    --structure-soft:#DCE3E2;
+    --paper-card:#F6F6F1;
+    --measure:70ch;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
+  .prose{max-width:var(--measure);}
+  a{color:var(--structure);}
+  a:hover{color:var(--signal);}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:96px 0 64px;border-bottom:1px solid var(--rule);}
+  .hero .kicker{
+    font-size:14px;color:var(--ink-soft);margin:0 0 20px;
+    display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;
+  }
+  .hero .kicker .dot{width:6px;height:6px;border-radius:50%;background:var(--signal);display:inline-block;}
+  .hero h1{
+    font-size:clamp(2.1rem, 4.4vw, 3.4rem);
+    line-height:1.08;
+    margin:0 0 28px;
+    max-width:16ch;
+  }
+  .hero .sub{
+    font-size:19px;color:var(--ink-soft);max-width:56ch;margin:0 0 40px;
+  }
+  .hero .stat-row{
+    display:flex;gap:0;flex-wrap:wrap;border-top:1px solid var(--rule);
+  }
+  .hero .stat{
+    padding:20px 28px 0 0;margin-right:28px;border-right:1px solid var(--rule);
+    padding-top:20px;
+  }
+  .hero .stat:last-child{border-right:none;}
+  .hero .stat .n{
+    font-family:'Fraunces', serif;font-size:28px;font-weight:500;
+    font-variant-numeric:tabular-nums;color:var(--ink);
+  }
+  .hero .stat .l{font-size:13px;color:var(--ink-soft);margin-top:4px;max-width:16ch;}
+
+  /* ---------- Section shell ---------- */
+  section{padding:64px 0;border-bottom:1px solid var(--rule);}
+  section:last-of-type{border-bottom:none;}
+  .section-head{
+    display:grid;grid-template-columns:180px 1fr;gap:32px;margin-bottom:32px;
+  }
+  .section-head .label{
+    font-size:14px;color:var(--ink-soft);padding-top:6px;
+  }
+  .section-head h2{font-size:clamp(1.5rem,2.6vw,2.1rem);margin:0;max-width:20ch;}
+  @media (max-width:720px){
+    .section-head{grid-template-columns:1fr;gap:8px;}
+  }
+  .band{
+    grid-column:2;
+  }
+  p{margin:0 0 20px;}
+  .prose p{max-width:var(--measure);}
+  ul,ol{margin:0 0 20px;padding-left:1.2em;}
+  li{margin-bottom:8px;max-width:var(--measure);}
+  strong{font-weight:600;}
+
+  /* ---------- Abstract ---------- */
+  .abstract-card{
+    background:var(--paper-card);border:1px solid var(--rule);
+    padding:32px 36px;border-radius:4px;
+  }
+  .abstract-card p{max-width:none;margin:0 0 14px;font-size:16.5px;}
+  .abstract-card p:last-child{margin-bottom:0;}
+  .abstract-card .step{color:var(--signal);font-weight:600;}
+
+  /* ---------- Callout numbers ---------- */
+  .callout{
+    display:inline-flex;align-items:baseline;gap:6px;
+    background:var(--signal-soft);color:var(--signal);
+    padding:2px 8px;border-radius:3px;font-weight:600;
+    font-variant-numeric:tabular-nums;
+  }
+  .callout.caution{background:var(--caution-soft);color:var(--caution);}
+  .callout.structure{background:var(--structure-soft);color:var(--structure);}
+
+  /* ---------- Data table ---------- */
+  table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15.5px;}
+  th,td{
+    text-align:left;padding:10px 16px 10px 0;border-bottom:1px solid var(--rule);
+    font-variant-numeric:tabular-nums;
+  }
+  th{color:var(--ink-soft);font-weight:600;font-size:13.5px;}
+  tr:last-child td{border-bottom:1px solid var(--ink);}
+  td.num, th.num{text-align:right;padding-right:0;}
+
+  /* ---------- Chart cards ---------- */
+  .chart-card{
+    background:var(--paper-card);border:1px solid var(--rule);border-radius:4px;
+    padding:28px 32px;margin:28px 0;
+  }
+  .chart-card h3{font-size:16px;margin:0 0 4px;font-family:'Work Sans',sans-serif;font-weight:600;}
+  .chart-card .note{font-size:13.5px;color:var(--ink-soft);margin-bottom:18px;}
+  svg text{font-family:'Work Sans', sans-serif;}
+  .bar-label{font-size:13px;fill:var(--ink);}
+  .bar-value{font-size:13px;fill:var(--ink);font-weight:600;font-variant-numeric:tabular-nums;}
+  .axis-label{font-size:11.5px;fill:var(--ink-soft);}
+
+  /* ---------- Playbook ---------- */
+  .action-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  @media (max-width:720px){.action-grid{grid-template-columns:1fr;}}
+  .action-card{
+    border:1px solid var(--rule);border-radius:4px;padding:22px 24px;background:var(--paper-card);
+  }
+  .action-card h4{margin:0 0 10px;font-size:15px;font-family:'Work Sans',sans-serif;font-weight:600;}
+  .action-card.no-go{border-color:var(--caution);background:var(--caution-soft);}
+  .action-card.no-go h4{color:var(--caution);}
+
+  /* ---------- Footer ---------- */
+  footer{padding:56px 0 80px;}
+  footer .prose{font-size:15px;color:var(--ink-soft);}
+  footer a{font-weight:600;}
+  code{
+    background:var(--structure-soft);color:var(--structure);
+    padding:1px 6px;border-radius:3px;font-size:0.9em;font-family:'Work Sans',monospace;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap hero">
+  <p class="kicker"><span class="dot"></span>FlyRank ML Internship &nbsp;·&nbsp; Applied Search Intelligence &nbsp;·&nbsp; Refresh / Content Opportunity Scoring</p>
+  <h1>Refresh, Reviewed<br>Ranking 331,437 Pages for Human Attention</h1>
+  <p class="sub">A baseline rule, a trained model, and an honest audit of both — built to help a content team decide what to look at first, not to decide for them.</p>
+  <div class="stat-row">
+    <div class="stat"><div class="n">331,437</div><div class="l">content pages scored</div></div>
+    <div class="stat"><div class="n">0.42 → 0.66</div><div class="l">Precision@50, baseline → model</div></div>
+    <div class="stat"><div class="n">0.73 ± 0.05</div><div class="l">cross-validated Precision@50</div></div>
+    <div class="stat"><div class="n">11.5%</div><div class="l">of pages have a recorded update date</div></div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ABSTRACT -->
+  <section>
+    <div class="section-head"><div class="label">Abstract</div>
+      <h2>Question, method, result — in five sentences</h2>
+    </div>
+    <div class="band">
+      <div class="abstract-card">
+        <p><span class="step">Question.</span> When a content team can only manually review a fraction of a page catalog, which pages should go to the top of that review queue first?</p>
+        <p><span class="step">Method.</span> We built a two-signal baseline rule, then trained a five-feature Random Forest ranking model on 331,437 anonymized pages from FlyRank's March 2026 search and analytics data, evaluated both with Precision@50 against an April-vs-March decline proxy, and audited the result with cross-validation and a repeated leakage hunt.</p>
+        <p><span class="step">Result.</span> The model lifts Precision@50 from <span class="callout">0.42 → 0.66</span> on a single held-out split, and to a cross-validated <span class="callout">0.73 ± 0.05</span> across five folds — but the audit finds a structural reason the task is easier than it looks: pages with zero March impressions can never carry the "declining" label, so part of the model's apparent skill is separating no-traffic pages from any-traffic pages, not fine-grained decline detection.</p>
+        <p>A second finding: staleness data — the other half of the review rationale — is only recorded for <span class="callout caution">11.5%</span> of pages, so it silently excludes most of the catalog from ever being flagged, regardless of traffic.</p>
+        <p>We present the ranked queue as a decision-support tool with explicit review guardrails, not a verdict, and point to closing the staleness-data gap as the highest-leverage next step.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRODUCTION -->
+  <section>
+    <div class="section-head"><div class="label">Introduction</div>
+      <h2>The decision this supports</h2>
+    </div>
+    <div class="band prose">
+      <p>A content or search team rarely has the capacity to manually review every page in a catalog for possible refresh, expansion, protection, pruning, or monitoring. Someone has to decide where to start. This project frames that as a ranking problem: given observed search, content, and engagement signals for a page, how confidently can we say it deserves the team's attention this cycle?</p>
+      <p>The unit of analysis is one content page, identified by an anonymized hash. The output is a ranked review queue with a score and a reason code — never an automatic decision to refresh, expand, prune, or protect a page. That framing matters because the cost of getting it wrong is asymmetric in a specific way: a false positive wastes a reviewer's limited time on a page that didn't need attention; a false negative lets a genuinely declining page go unreviewed for another cycle. Neither error is catastrophic on its own, which is exactly why this should stay a triage aid a human acts on, not a rule that acts by itself.</p>
+      <p>What follows tests two ways of building that ranking — a hand-written rule and a trained model — against the same proxy outcome, and reports honestly on where each one is, and isn't, earning its ranking.</p>
+    </div>
+  </section>
+
+  <!-- DATA -->
+  <section>
+    <div class="section-head"><div class="label">Data</div>
+      <h2>One month, one warehouse, one anonymized slice</h2>
+    </div>
+    <div class="band prose">
+      <p>All work here uses the FlyRank ML Internship warehouse, a star-schema release of anonymized, aggregated search and analytics history. The development window is <strong>March 2026</strong> (2026-03-01 to 2026-03-31), which contains <strong>9,841,378</strong> rows across <strong>55</strong> anonymized clients and <strong>331,437</strong> unique content pages, at a verified grain of one row per client × content page × report date.</p>
+      <p>Two raw signal families were carried forward into modeling: Google Search Console signals (impressions, average position) and Google Analytics 4 signals (sessions, engaged sessions, scroll events), each aggregated to the content-page level for March. A page-level proxy target, <code>is_declining_proxy</code>, was defined by comparing April clicks to March clicks (<code>april_clicks &lt; march_clicks</code>) — a future-window comparison built deliberately outside the March feature window to keep the label honest.</p>
+      <p>What was deliberately excluded: any field derived from the label itself (see the leakage trap below), the sealed <code>_sample</code> table reserved outside feature development, and — per the dataset's own use terms — any client name, domain, URL, private query, or other client-identifying value. Every number in this paper is safe to publish under those terms.</p>
+    </div>
+  </section>
+
+  <!-- METHODOLOGY -->
+  <section>
+    <div class="section-head"><div class="label">Methodology</div>
+      <h2>Baseline, features, model, split — and why each choice is honest</h2>
+    </div>
+    <div class="band prose">
+      <h3 style="font-size:18px;margin-bottom:8px;">The baseline rule</h3>
+      <p>The Week-4 baseline scores every page from two observed signals only: <code>march_impressions</code> and <code>staleness_days</code> (days since last content update). Higher impressions and greater staleness both push the score up; pages above an empirically chosen cut (<span class="callout structure">baseline_score ≥ 70.0</span>) are labeled <code>REVIEW_REFRESH</code> with reason code <code>STALE_HIGH_OPPORTUNITY</code> — <span class="callout">10,189</span> of 331,437 pages (3.07%). This is the simplest thing that could plausibly work, and the point of comparison for everything after it.</p>
+
+      <h3 style="font-size:18px;margin:28px 0 8px;">The leakage trap, and the feature set it produced</h3>
+      <p>Before any model was trusted, a deliberate leakage trap was run: training a classifier with <code>march_clicks</code> included as a feature, when <code>march_clicks</code> is itself part of the label's own definition. That model scored an inflated <span class="callout caution">0.9677 ROC AUC</span>. Removing <code>march_clicks</code> and retraining on the remaining features dropped that to a more believable <span class="callout">0.9238</span> — the gap is the leakage, made visible on purpose. The final feature set used throughout this paper — <code>march_impressions</code>, <code>avg_search_position</code>, <code>march_sessions</code>, <code>engagement_rate</code>, <code>march_scroll_events</code> — excludes <code>march_clicks</code> for exactly this reason, and a second, independent leakage hunt (below, under Results) was run against it before training the final model.</p>
+
+      <h3 style="font-size:18px;margin:28px 0 8px;">Why a Random Forest, and why this split</h3>
+      <p>The lane was framed from the start as a ranking task that should combine multiple signals rather than lean on one threshold. A Random Forest classifier (300 trees, max depth 8, balanced class weights for the ~13.6% positive rate) fits that directly, while staying inspectable through feature importances. The split is a random, stratified 80/20 at the content-page level — not grouped by client, and not time-aware at the row level, because neither applies at this grain: every <code>content_hash_id</code> in the exported feature set is unique (verified directly, zero duplicate rows), so there's no same-page-in-both-sides leakage a grouped split would normally guard against, and the future-vs-past separation that matters was already built into the label one step upstream, when <code>is_declining_proxy</code> was defined from April-vs-March clicks. What a random split still needs — stratification on an imbalanced target — is applied.</p>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section>
+    <div class="section-head"><div class="label">Results</div>
+      <h2>What actually improved, and what didn't</h2>
+    </div>
+    <div class="band">
+      <div class="prose">
+        <p>On the held-out test set (66,288 pages), ranking by the model's predicted probability put more truly-declining pages into the top 50 than ranking by the baseline score did — the core result this project set out to test.</p>
+      </div>
+
+      <table>
+        <thead><tr><th>Ranking</th><th class="num">Precision@50</th><th>Basis</th></tr></thead>
+        <tbody>
+          <tr><td>Week-4 baseline rule</td><td class="num">0.42</td><td>same test rows, ranked by <code>baseline_score</code></td></tr>
+          <tr><td>Week-5 Random Forest</td><td class="num">0.66</td><td>same test rows, ranked by predicted probability</td></tr>
+        </tbody>
+      </table>
+
+      <div class="chart-card">
+        <h3>Baseline vs. model, single split</h3>
+        <div class="note">Precision@50 on the same 66,288 held-out pages</div>
+        <svg viewBox="0 0 640 140" width="100%" height="140" role="img" aria-label="Bar chart comparing baseline and model Precision at 50">
+          <line x1="140" y1="20" x2="140" y2="120" stroke="var(--rule)"/>
+          <!-- baseline bar -->
+          <text x="0" y="52" class="bar-label">Baseline</text>
+          <rect x="140" y="38" width="176" height="28" fill="var(--structure)" rx="2"/>
+          <text x="326" y="57" class="bar-value">0.42</text>
+          <!-- model bar -->
+          <text x="0" y="98" class="bar-label">Model</text>
+          <rect x="140" y="84" width="276" height="28" fill="var(--signal)" rx="2"/>
+          <text x="426" y="103" class="bar-value">0.66</text>
+        </svg>
+      </div>
+
+      <div class="chart-card">
+        <h3>Model stability: single split vs. 5-fold cross-validation</h3>
+        <div class="note">Same model, features, and metric — the single 0.66 split sits at the low end of the fold spread</div>
+        <svg viewBox="0 0 640 160" width="100%" height="160" role="img" aria-label="Dot plot of five cross validation fold scores with mean marker">
+          <line x1="60" y1="130" x2="600" y2="130" stroke="var(--rule)"/>
+          <text x="60" y="150" class="axis-label">0.60</text>
+          <text x="600" y="150" class="axis-label" text-anchor="end">0.85</text>
+          <!-- scale: 0.60 -> x=60, 0.85 -> x=600, linear -->
+          <!-- fold values: 0.70 0.80 0.78 0.70 0.66 -->
+          <circle cx="276" cy="90" r="7" fill="var(--structure)"/>
+          <circle cx="492" cy="90" r="7" fill="var(--structure)"/>
+          <circle cx="448.8" cy="90" r="7" fill="var(--structure)"/>
+          <circle cx="276" cy="70" r="7" fill="var(--structure)"/>
+          <circle cx="189.6" cy="110" r="7" fill="var(--signal)"/>
+          <text x="189.6" y="60" text-anchor="middle" class="bar-value" fill="var(--signal)">0.66 (single split)</text>
+          <line x1="336.5" y1="30" x2="336.5" y2="130" stroke="var(--ink-soft)" stroke-dasharray="3,3"/>
+          <text x="336.5" y="20" text-anchor="middle" class="axis-label">mean 0.728</text>
+        </svg>
+        <div class="note" style="margin-top:12px;">Fold scores: 0.70, 0.80, 0.78, 0.70, 0.66 — mean 0.728, std 0.053</div>
+      </div>
+
+      <div class="chart-card">
+        <h3>What the model actually leans on</h3>
+        <div class="note">Random Forest feature importances</div>
+        <svg viewBox="0 0 640 200" width="100%" height="200" role="img" aria-label="Horizontal bar chart of feature importances">
+          <text x="0" y="24" class="bar-label">march_impressions</text>
+          <rect x="200" y="10" width="379" height="20" fill="var(--signal)" rx="2"/>
+          <text x="588" y="25" class="bar-value">0.632</text>
+
+          <text x="0" y="62" class="bar-label">march_sessions</text>
+          <rect x="200" y="48" width="102" height="20" fill="var(--structure)" rx="2"/>
+          <text x="311" y="63" class="bar-value">0.171</text>
+
+          <text x="0" y="100" class="bar-label">avg_search_position</text>
+          <rect x="200" y="86" width="102" height="20" fill="var(--structure)" rx="2"/>
+          <text x="311" y="101" class="bar-value">0.170</text>
+
+          <text x="0" y="138" class="bar-label">march_scroll_events</text>
+          <rect x="200" y="124" width="13" height="20" fill="var(--structure)" rx="2"/>
+          <text x="222" y="139" class="bar-value">0.022</text>
+
+          <text x="0" y="176" class="bar-label">engagement_rate</text>
+          <rect x="200" y="162" width="4" height="20" fill="var(--structure)" rx="2"/>
+          <text x="213" y="177" class="bar-value">0.006</text>
+        </svg>
+      </div>
+
+      <div class="prose">
+        <p>Error analysis on the test set's top 50: 33 of 50 are correct hits, 17 are false positives. The false positives aren't distinguishable from true positives by impressions or position (both average roughly 11,000–11,900 impressions and position 5.5) — but they carry <em>higher</em> <code>march_sessions</code> (77.4 vs 66.9) and <code>march_scroll_events</code> (14.3 vs 11.2). In plain terms: among the highest-impression pages, the model isn't yet distinguishing a genuinely declining page from one with similar traffic and position but slightly deeper engagement.</p>
+
+        <h3 style="font-size:18px;margin:28px 0 8px;">Signal audit: does the baseline's own logic hold up?</h3>
+        <p>The baseline is designed to reward impressions <em>and</em> staleness. In the data, only one half holds cleanly. Impressions correlate strongly with the baseline score (Spearman ≈ 0.96). Staleness, among the rows where it's even recorded, correlates weakly (Spearman ≈ 0.09) — and it's recorded for only <span class="callout caution">11.5%</span> of all pages. Worse for the rule's own design: staleness is present for 99.99% of pages that get flagged <code>REVIEW_REFRESH</code>, but only 8.7% of pages labeled <code>MONITOR</code> — meaning a page with genuinely unknown update history can't reach the review queue no matter how much traffic it gets. <strong>Verdict: mixed</strong> — impressions do real work; staleness mostly can't, because it usually isn't there to work with.</p>
+
+        <h3 style="font-size:18px;margin:28px 0 8px;">A second leakage hunt, on the final feature set</h3>
+        <p>No single feature approaches the 0.9677 leaked AUC from the <code>march_clicks</code> trap — the closest is <code>march_impressions</code> alone at 0.9147, a legitimate raw signal. But checking <em>missingness</em> against the target surfaced something structural worth stating plainly: <code>avg_search_position</code> is missing for exactly the <span class="callout caution">154,699</span> pages with zero March impressions, and every one of those pages carries <code>is_declining_proxy = 0</code>, with zero exceptions. This isn't a data quality accident — a page with zero March clicks cannot satisfy <code>april_clicks &lt; march_clicks</code>, so it is mechanically impossible for a zero-traffic page to be labeled "declining." Part of the model's 0.9147 single-feature separation, and part of its overall lift over baseline, is this easy floor: telling "no traffic" apart from "some traffic," not fine-grained decline detection among pages that already get visitors.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIMITATIONS -->
+  <section>
+    <div class="section-head"><div class="label">Limitations &amp; honest framing</div>
+      <h2>What this does and doesn't support</h2>
+    </div>
+    <div class="band prose">
+      <ul>
+        <li><strong>The label is a proxy, not ground truth.</strong> <code>is_declining_proxy</code> is one April-vs-March click comparison — directional and observed, not a confirmed or causal outcome, and not guaranteed to hold in a different month.</li>
+        <li><strong>Part of the model's lift is a structural artifact.</strong> Zero-traffic pages can never be labeled declining, which makes the easiest part of the ranking task mechanically easy rather than learned. Reported Precision@50 numbers should be read with that floor in mind, not as pure discriminative skill among trafficked pages.</li>
+        <li><strong>Staleness data has a coverage gap, not a signal problem.</strong> Only 11.5% of pages have a recorded update date. The "staleness" half of the original review rationale is currently more a data-availability filter than a behavioral signal — closing that gap is likely higher-leverage than further model tuning.</li>
+        <li><strong>Validation is within one development window.</strong> All splits — the single 80/20 split and the 5-fold cross-validation — are drawn from March-derived features and an April-anchored label; there is no true out-of-time test against a later month in this paper.</li>
+        <li><strong>No causal claims.</strong> Nothing here shows that refreshing a page will improve its performance, or that any signal <em>causes</em> decline — only that certain signals are associated with an observed proxy outcome.</li>
+        <li><strong>This is decision support.</strong> The ranking helps allocate limited review capacity; it does not and should not automatically decide that a page must be refreshed, expanded, protected, pruned, or monitored.</li>
+      </ul>
+      <p style="margin-top:28px;"><strong>A claim, rewritten.</strong> The bold version — <em>"the model predicts which pages will decline"</em> — overstates what was tested. The version this paper stands behind: on a held-out slice of March 2026 pages, ranking by the model's predicted probability put more pages matching the observed April-vs-March decline proxy into the top 50 than the baseline did (0.66 vs 0.42, same test rows) — an observed, directional improvement in one proxy-labeled ranking exercise, not a forecast of future decline.</p>
+    </div>
+  </section>
+
+  <!-- RECOMMENDATIONS -->
+  <section>
+    <div class="section-head"><div class="label">Ranked recommendations</div>
+      <h2>The action playbook</h2>
+    </div>
+    <div class="band prose">
+      <p>The output for a reviewer is a ranked queue — currently <span class="callout structure">10,189</span> pages under the baseline rule's <code>REVIEW_REFRESH</code> label, sorted by score — with the reason code <code>STALE_HIGH_OPPORTUNITY</code> attached to every row so a reviewer knows why a page surfaced. <strong>Intended use:</strong> a content or search-ops reviewer with limited weekly capacity, deciding which pages to open first. <strong>Where it stops being valid:</strong> for the 88.5% of pages with no recorded update date (structurally invisible to this queue regardless of traffic), and beyond the March 2026 window it was built from.</p>
+
+      <div class="action-grid">
+        <div class="action-card">
+          <h4>Human review, always</h4>
+          <ul>
+            <li>Confirm impressions reflect a real, non-bot-inflated audience.</li>
+            <li>Confirm the page's business/editorial context — a seasonal page or one slated for deprecation reads differently at the same score.</li>
+            <li>Confirm the recorded update date reflects a genuine content edit, not a template or metadata timestamp.</li>
+          </ul>
+        </div>
+        <div class="action-card no-go">
+          <h4>Never automate from this score</h4>
+          <ul>
+            <li>Never auto-publish, auto-rewrite, or auto-prune a page from its score alone.</li>
+            <li>Never treat a <code>MONITOR</code> label as "confirmed healthy" for a page with missing staleness data — it may mean unscored, not fine.</li>
+            <li>Never present the score as a causal prediction of future traffic change.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 style="font-size:18px;margin:28px 0 8px;">Monitoring / re-audit triggers</h3>
+      <ul>
+        <li>A material shift in the staleness-observed rate (currently 11.5%) — coverage has changed, re-check thresholds.</li>
+        <li>Drift in the share of pages crossing the score-70 cut (currently 3.07%) — re-derive the threshold from the new month's distribution rather than reusing 70.0.</li>
+        <li>A sharp change in the zero-impressions share (currently 46.68%) — re-run the full signal audit before trusting the queue.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- REPRODUCIBILITY -->
+  <section>
+    <div class="section-head"><div class="label">Reproducibility</div>
+      <h2>Every step, in order</h2>
+    </div>
+    <div class="band prose">
+      <p>All notebooks live under <code>work/notebooks/</code> in this repository and run top to bottom without errors:</p>
+      <table>
+        <thead><tr><th>Notebook</th><th>What it establishes</th></tr></thead>
+        <tbody>
+          <tr><td><code>w01_research_question.ipynb</code></td><td>Lane, research question, decision, cost of error</td></tr>
+          <tr><td><code>w02_ml_task_framing.ipynb</code></td><td>Ranking task, proxy target, Precision@50 metric</td></tr>
+          <tr><td><code>w03_data_contract.ipynb</code></td><td>Data grain, window, feature set, deliberate leakage trap (0.9677 → 0.9238)</td></tr>
+          <tr><td><code>w03_feature_leakage_check.ipynb</code></td><td>Feature vector build and self-referential leakage check on the baseline's own outputs</td></tr>
+          <tr><td><code>w04_baseline_score.ipynb</code></td><td>Baseline rule and Top-20 review</td></tr>
+          <tr><td><code>w04_signal_audit.ipynb</code></td><td>Distribution checks and flag-linked test on the baseline's assumptions</td></tr>
+          <tr><td><code>w05_model.ipynb</code></td><td>Random Forest model, split design, baseline comparison, error analysis</td></tr>
+          <tr><td><code>w06_validation_audit.ipynb</code></td><td>Cross-validation stability check, second leakage hunt, claim rewrite</td></tr>
+          <tr><td><code>w07_action_playbook.ipynb</code></td><td>Ranked queue export, human-review checklist, monitoring triggers</td></tr>
+        </tbody>
+      </table>
+      <p>Exported artifacts referenced in this paper: <code>work/outputs/baseline_action_score.csv</code>, <code>work/outputs/review_queue_week7.csv</code>.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer class="wrap">
+  <div class="prose">
+    <p><strong>Acknowledgments &amp; data credit.</strong> Built on the FlyRank ML Internship dataset. Learn more at <a href="https://flyrank.ai" target="_blank" rel="noopener">flyrank.ai</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>
